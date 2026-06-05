@@ -6,7 +6,7 @@ logging.basicConfig(level=logging.INFO)
 
 TOKEN = "8651551807:AAHAEkW6vYglSTA5QGhL5vT6s2G6j1GGAdc"
 GAME = "lumberjack"
-URL = "https://quiet-heliotrope-a67a45.netlify.app/lumberjack.html"
+URL = "https://quiet-heliotrope-a67a45.netlify.app/"
 
 async def play(update: Update, context: ContextTypes.DEFAULT_TYPE):
     kb = [[InlineKeyboardButton("🪓 Play!", callback_game=True)]]
