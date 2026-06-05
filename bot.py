@@ -9,7 +9,7 @@ URL = "https://quiet-heliotrope-a67a45.netlify.app/lumberjack.html"
 logging.basicConfig(level=logging.INFO)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    keyboard = [[InlineKeyboardButton("🪓 Play LumberJack!", callback_game=True)]]
+    keyboard = [[InlineKeyboardButton("🪓 Play!", callback_game=True)]]
     await update.message.reply_game(GAME, reply_markup=InlineKeyboardMarkup(keyboard))
 
 async def callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
