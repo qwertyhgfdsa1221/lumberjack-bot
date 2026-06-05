@@ -1,6 +1,6 @@
+import logging
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
-import logging
 
 logging.basicConfig(level=logging.INFO)
 
@@ -9,7 +9,7 @@ GAME = "lumberjack"
 URL = "https://quiet-heliotrope-a67a45.netlify.app/lumberjack.html"
 
 async def play(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    kb = [[InlineKeyboardButton("🪓 Play LumberJack!", callback_game=True)]]
+    kb = [[InlineKeyboardButton("🪓 Play!", callback_game=True)]]
     await update.message.reply_game(GAME, reply_markup=InlineKeyboardMarkup(kb))
 
 async def answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
