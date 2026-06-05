@@ -9,15 +9,14 @@ GAME = "lumberjack"
 URL = "https://quiet-heliotrope-a67a45.netlify.app/lumberjack.html"
 
 async def play(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    kb = [[InlineKeyboardButton("🪓 Play!", callback_game=True)]]
+    kb = [[InlineKeyboardButton("🪓 Play LumberJack!", callback_game=True)]]
     await update.message.reply_game(GAME, reply_markup=InlineKeyboardMarkup(kb))
 
 async def answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     q = update.callback_query
     await q.answer(url=URL)
 
-if name == "__main__":
-    app = Application.builder().token(TOKEN).build()
-    app.add_handler(CommandHandler("play", play))
-    app.add_handler(CallbackQueryHandler(answer))
-    app.run_polling()
+application = Application.builder().token(TOKEN).build()
+application.add_handler(CommandHandler("play", play))
+application.add_handler(CallbackQueryHandler(answer))
+application.run_polling()
